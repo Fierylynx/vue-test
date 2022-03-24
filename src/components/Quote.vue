@@ -1,11 +1,15 @@
 <template>
-  <div class="quote section-padding">
-    <blockquote class="quote__content">
-      In hac habitasse platea dictumst. Phasellus finibus ipsum enim, non
-      pretium massa mattis non. Curabitur ut tempus ex. Nunc dictum est enim,
-      consectetur convallis odio mollis tempus!
-      <cite class="quote__author top-element"> Jim Gordon (GCPD) </cite>
-    </blockquote>
+  <div class="quote section-padding section-bg">
+    <div class="container">
+      <blockquote class="quote__content">
+        <p>
+          In hac habitasse platea dictumst. Phasellus finibus ipsum enim, non
+          pretium massa mattis non. Curabitur ut tempus ex. Nunc dictum est
+          enim, consectetur convallis odio mollis tempus!
+        </p>
+        <cite class="quote__author top-element"> Jim Gordon (GCPD) </cite>
+      </blockquote>
+    </div>
   </div>
 </template>
 
@@ -14,26 +18,39 @@ export default {};
 </script>
 
 <style lang="scss">
+@import "../assets/scss/vars";
+
 .quote {
-  padding: 50px 0;
-  background-color: #353a3f;
+  background-image: url(../assets/image/quote-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .quote__content {
   position: relative;
   padding-top: 40px;
   font-style: italic;
-  color: #fff;
+  color: $white;
+
+  & p {
+    margin-bottom: 20px;
+  }
 
   &::before {
     position: absolute;
     top: 0;
     left: 0;
-    content: '';
+    content: "";
     width: 38px;
     height: 29px;
-    background-image: url(../assets/svg/quote.svg);
+    background-image: url(../assets/image/svg/quote.svg);
     background-size: cover;
+  }
+
+    @media (min-width: 767px) {
+      max-width: 766px;
+      margin: 0 auto;
   }
 }
 
@@ -42,12 +59,12 @@ export default {};
   font-size: 16px;
   font-weight: 500;
   font-style: normal;
-  color: #8c9198;
+  color: $grey4;
 
   &.top-element {
     padding-top: 10px;
     &::before {
-      background-color: #8c9198;
+      background-color: $grey4;
     }
   }
 }

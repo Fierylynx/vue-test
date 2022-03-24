@@ -1,44 +1,39 @@
 <template>
-  <footer class="footer section-padding">
-    <ul class="social">
-      <li>
-        <a href="#">
-          <img src="../assets/svg/facebook.svg" alt="" />
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="../assets/svg/twitter.svg" alt="" />
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="../assets/svg/instagram.svg" alt="" />
-        </a>
-      </li>
-    </ul>
-    <span class="footer__copy">
-      (c) 2018 NAME. All rights reserved.
-    </span>
+  <footer class="footer section-padding section-bg">
+    <div class="container">
+      <div class="footer__wrapper">
+        <Social />
+        <div class="footer__content">
+          <Menu />
+          <span class="footer__copy">
+            (c) 2018 NAME. All rights reserved.
+          </span>
+        </div>
+      </div>
+    </div>
   </footer>
 </template>
 
 <script>
-export default {};
+import Social from "@/components/Social/SocialList";
+import Menu from "@/components/Menu/MenuList";
+export default {
+  components: {
+    Social,
+    Menu,
+  },
+  
+};
 </script>
 
-<style lang='scss'>
-.footer {
-  background-color: #282d31;
-}
+<style lang="scss" scoped>
 
-.social {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-
-  li:not(:last-child) {
-    margin-right: 30px;
+.footer__wrapper {
+    @media (min-width: 991px) {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
   }
 }
 
@@ -46,5 +41,8 @@ export default {};
   display: block;
   font-size: 16px;
   text-align: center;
+    @media (min-width: 991px) {
+    text-align: left;
+  }
 }
 </style>
