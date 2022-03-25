@@ -60,6 +60,7 @@ export default {
   display: block;
   font-size: 16px;
   text-align: center;
+  
   @media (min-width: 991px) {
     text-align: left;
   }

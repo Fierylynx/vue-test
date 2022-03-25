@@ -66,6 +66,7 @@ export default {};
 
 .menu--footer {
   display: none;
+  
   @media (min-width: 991px) {
     display: flex;
     padding: 0;

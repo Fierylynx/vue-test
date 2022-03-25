@@ -1,7 +1,7 @@
 <template>
   <li class="social__item">
     <a href="#">
-      <img :src="image" alt="" />
+      <img :src="image" alt="social svg" />
     </a>
   </li>
 </template>
@@ -16,6 +16,7 @@ export default {
 
 <style lang="scss">
 .social__item {
+  
   &:not(:last-child) {
     margin-right: 30px;
   }
@@ -23,6 +24,7 @@ export default {
   @media (min-width: 991px) {
     padding: 2px;
     transition: opacity 0.3s;
+
     &:hover {
       opacity: 0.8;
     }

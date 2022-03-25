@@ -65,6 +65,7 @@ export default {
 <style lang="scss">
 .blog__title {
   margin-bottom: 30px;
+  
   @media (min-width: 1169px) {
     margin-bottom: 70px;
   }
@@ -74,6 +75,7 @@ export default {
   display: grid;
   gap: 60px;
   justify-content: center;
+
   @media (min-width: 1169px) {
     justify-content: normal;
   }
