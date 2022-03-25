@@ -1,7 +1,7 @@
 <template>
   <button
     class="burger"
-    v-on:click="navOpen = !navOpen"
+    @click="navOpen = !navOpen"
     v-bind:class="{ active: navOpen }"
   >
     <span></span>
@@ -9,46 +9,42 @@
     <span></span>
   </button>
   <nav v-show="navOpen">
-    <Menu />
+    <MenuList />
     <form class="menu__form">
       <input
         class="menu__input"
         type="text"
         v-bind:value="inputValue"
-        v-on:input="inputChangeHandler"
+        v-show="inputVisibility"
       />
-      <button class="menu__search" @click="startSearch"></button>
+      <button
+        class="menu__search"
+        @click.prevent="inputVisibility = !inputVisibility"
+        type="button"
+      ></button>
     </form>
   </nav>
 </template>
 
 <script>
-import Menu from '@/components/Menu/MenuList';
+import MenuList from "@/components/Menu/MenuList";
 export default {
   components: {
-    Menu,
+    MenuList,
   },
   data() {
     return {
       navOpen: false,
       inputValue: "",
-      search: [],
+      inputVisibility: true,
     };
   },
-  props: {
-    footerMenu: true,
-  },
+  // props: {
+  //   footerMenu: true,
+  // },
   methods: {
-    inputChangeHandler(e) {
-      this.inputValue = e.target.value;
-    },
     startSearch() {
-      this.search.push(this.inputValue);
-    },
-    adaptivMenu() {
-      if (max - width > 991) {
-        this.navOpen = true;
-      }
+      console.log("Начинаю поиск", this.inputValue);
     },
   },
 };
@@ -137,12 +133,15 @@ nav {
   @media (min-width: 767px) {
     max-width: 700px;
   }
+  @media (min-width: 991px) {
+    // display: none;
+  }
 }
 
 .menu__search {
   position: relative;
   padding: 2px;
-  width: 49px;
+  width: 44px;
   height: 44px;
   background-color: $grey3;
   border: none;
@@ -159,6 +158,15 @@ nav {
     background-image: url(../assets/image/svg/loupe.svg);
     background-repeat: no-repeat;
     background-size: contain;
+  }
+  @media (min-width: 991px) {
+    background-color: transparent;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $green;
+    }
   }
 }
 </style>

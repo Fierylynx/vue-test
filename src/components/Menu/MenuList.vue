@@ -1,18 +1,25 @@
 <template>
-  <div class="menu">
-    <ul class="menu__list">
-      <li class="menu__item"><a href="">Work</a></li>
-      <li class="menu__item"><a href="">About</a></li>
-      <li class="menu__item"><a href="">Services</a></li>
-      <li class="menu__item"><a href="">Blog</a></li>
-      <li class="menu__item"><a href="">Contact</a></li>
-    </ul>
-  </div>
+  <ul class="menu">
+    <li class="menu__item">
+      <a class="menu__link" href="#">Work</a>
+    </li>
+    <li class="menu__item">
+      <a class="menu__link" href="#">About</a>
+    </li>
+    <li class="menu__item">
+      <a class="menu__link" href="#">Services</a>
+    </li>
+    <li class="menu__item">
+      <a class="menu__link" href="#">Blog</a>
+    </li>
+    <li class="menu__item">
+      <a class="menu__link" href="#">Contact</a>
+    </li>
+  </ul>
 </template>
 
 <script>
-export default {
-};
+export default {};
 </script>
 
 <style lang="scss">
@@ -20,53 +27,66 @@ export default {
 
 .menu {
   padding: 70px 0 30px;
-
-  &__list {
-    padding-top: 50px;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  }
-
-  &__item:not(:last-child) {
-    margin-bottom: 20px;
-  }
-
-  & a {
-    display: block;
-    padding: 5px 0;
-    font-size: 22px;
-    font-weight: 600;
-    color: $grey3;
-    text-transform: uppercase;
-  }
+  margin: 0;
+  text-align: center;
   @media (min-width: 991px) {
-    & a {
-      padding: 0;
-      font-size: 24px;
-    }
+    width: max-content;
+    margin: 0 auto 50px;
+    padding: 40px 0;
+    border-top: 2px solid $grey2;
+    border-bottom: 2px solid $grey2;
   }
 }
 
-// .menu--footer {
-//   display: none;
-//   @media (min-width: 991px) {
-//     display: block;
-//     padding: 0;
-//   }
-//   .menu__list {
-//     @media (min-width: 991px) {
-//       display: flex;
-//     }
-//   }
+.menu__item:not(:last-child) {
+  margin-bottom: 20px;
+}
 
-//   .menu__item {
-//     @media (min-width: 991px) {
-//       &:not(:last-child) {
-//         margin-bottom: 0;
-//         margin-right: 30px;
-//       }
-//     }
-//   }
-// }
+.menu__link {
+  display: block;
+  padding: 5px 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: $grey4;
+  text-transform: uppercase;
+  transition: color .3s;
+
+  &:hover {
+    color: $green;
+  }
+
+  @media (min-width: 991px) {
+    padding: 0;
+    font-size: 18px;
+  }
+  @media (min-width: 1169px) {
+    font-size: 16px;
+  }
+}
+
+.menu--footer {
+  display: none;
+  @media (min-width: 991px) {
+    display: flex;
+    padding: 0;
+    margin-bottom: 20px;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .menu__item {
+    @media (min-width: 991px) {
+      &:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .menu__link {
+    @media (min-width: 1169px) {
+      font-size: 18px;
+    }
+  }
+}
 </style>

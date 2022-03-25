@@ -20,18 +20,15 @@ export default {};
 <style lang="scss">
 @import "../assets/scss/vars";
 
-.quote {
-  background-image: url(../assets/image/quote-bg.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
 .quote__content {
   position: relative;
   padding-top: 40px;
   font-style: italic;
   color: $white;
+  background-image: url(../assets/image/quote-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 
   & p {
     margin-bottom: 20px;
@@ -48,9 +45,21 @@ export default {};
     background-size: cover;
   }
 
-    @media (min-width: 767px) {
-      max-width: 766px;
-      margin: 0 auto;
+  @media (min-width: 767px) {
+    max-width: 766px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1169px) {
+    padding-top: 50px;
+    font-size: 28px;
+    & p {
+      margin-bottom: 55px;
+    }
+    &::before {
+      width: 48px;
+      height: 39px;
+    }
   }
 }
 
@@ -66,6 +75,9 @@ export default {};
     &::before {
       background-color: $grey4;
     }
+  }
+  @media (min-width: 1169px) {
+    font-size: 20px;
   }
 }
 </style>

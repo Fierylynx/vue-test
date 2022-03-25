@@ -36,6 +36,9 @@ export default {};
     max-width: 788px;
     margin: 0 auto;
   }
+  @media (min-width: 991px) {
+    height: 100vh;
+  }
 }
 
 .hero__title {
@@ -44,9 +47,9 @@ export default {};
   color: $white;
   text-transform: uppercase;
   @media (min-width: 767px) {
-      font-size: 38px;
+    font-size: 38px;
   }
-  @media (min-width: 1170px) {
+  @media (min-width: 1169px) {
     font-size: 62px;
   }
 }
@@ -55,12 +58,26 @@ export default {};
   display: block;
   font-size: 22px;
   font-weight: 500;
-    @media (min-width: 767px) {
-      font-size: 28px;
+  @media (min-width: 767px) {
+    font-size: 28px;
+  }
+  @media (min-width: 1169px) {
+    font-size: 30px;
   }
 }
 
 .hero__content {
   margin-bottom: 45px;
+  color: $grey4;
+    @media (min-width: 1169px) {
+    font-size: 22px;
+  }
+}
+
+.hero__button.button {
+  @media (min-width: 1169px) {
+    max-width: 200px;
+    padding: 10px 0;
+  }
 }
 </style>

@@ -1,16 +1,32 @@
 <template>
   <section class="services section-padding">
-    <List />
+    <div class="container">
+      <ul class="services__list" :services="services">
+        <Item
+          v-for="(service, i) in services"
+          :key="i"
+          :title="service.title"
+          :content="service.content"
+          :image="service.image"
+        />
+      </ul>
+    </div>
   </section>
 </template>
 
 <script>
-import List from "@/components/Services/ServiceList";
+import Item from "@/components/Services/ServiceItem";
 export default {
-  components: {
-    List,
+  props: {
+    services: {
+      type: Array,
+      required: true,
+    },
   },
-    data() {
+  components: {
+    Item,
+  },
+  data() {
     return {
       services: [
         {
@@ -44,6 +60,21 @@ export default {
 .services {
   &.section-padding {
     padding: 70px 0;
+  }
+}
+
+.services__list {
+  display: grid;
+  gap: 60px;
+  justify-content: center;
+  @media (min-width: 767px) {
+    grid-template-columns: repeat(2, 363px);
+    gap: 20px;
+    row-gap: 60px;
+  }
+  @media (min-width: 1169px) {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
   }
 }
 </style>

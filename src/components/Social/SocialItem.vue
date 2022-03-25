@@ -1,29 +1,31 @@
 <template>
-  <li v-for="social in socials">
+  <li class="social__item">
     <a href="#">
-      <img :src="social.image" alt="" />
+      <img :src="image" alt="" />
     </a>
   </li>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      socials: [
-        {
-          image: require("@/assets/image/svg/facebook.svg"),
-        },
-        {
-          image: require("@/assets/image/svg/twitter.svg"),
-        },
-        {
-          image: require("@/assets/image/svg/instagram.svg"),
-        },
-      ],
-    };
+  props: {
+    image: '',
   },
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.social__item {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  @media (min-width: 991px) {
+    padding: 2px;
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+</style>

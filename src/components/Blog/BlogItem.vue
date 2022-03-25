@@ -1,16 +1,16 @@
 <template>
-  <li class="blog__item" v-for="blog in blogs">
+  <li class="blog__item">
     <article class="blog__atricle">
       <div class="blog__image">
-        <img :src="blog.image" alt="" />
+        <img :src="image" alt="" />
       </div>
-      <div class="blog__wrapper">
-        <h4 class="blog__title subtitle">
-          {{ blog.title }}
+      <div class="blog__content">
+        <h4 class="blog__subtitle subtitle">
+          {{ title }}
         </h4>
-        <div class="blog__content">
+        <div class="blog__text">
           <p>
-            {{ blog.content }}
+            {{ content }}
           </p>
         </div>
         <button class="blog__button button">Read more</button>
@@ -21,50 +21,41 @@
 
 <script>
 export default {
-    data() {
-    return {
-      blogs: [
-        {
-          id: 1,
-          title: "Title of a post 1",
-          content:
-            "In hac habitasse platea dictumst. Phasellus finibus ipsum enim, non pretium massa mattis non. Curabitur ut tempus ex. Nunc dictum est enim, consectetur convallis odio mollis tempus.",
-          image: require("@/assets/image/blog/image.jpg"),
-        },
-        {
-          id: 2,
-          title: "Title of a post 2",
-          content:
-            "In hac habitasse platea dictumst. Phasellus finibus ipsum enim, non pretium massa mattis non. Curabitur ut tempus ex. Nunc dictum est enim, consectetur convallis odio mollis tempus.",
-          image: require("@/assets/image/blog/image.jpg"),
-        },
-        {
-          id: 3,
-          title: "Title of a post 3",
-          content:
-            "In hac habitasse platea dictumst. Phasellus finibus ipsum enim, non pretium massa mattis non. Curabitur ut tempus ex. Nunc dictum est enim, consectetur convallis odio mollis tempus.",
-          image: require("@/assets/image/blog/image.jpg"),
-        },
-      ],
-    };
+  props: {
+    image: "",
+    title: "",
+    content: "",
   },
 };
 </script>
 
-<style lang='scss'>
-
-.blog__image {
-  margin-bottom: 10px;
-}
-
-.blog__content {
-  margin-bottom: 10px;
-}
-
-.blog__wrapper {
-    @media (min-width: 767px) {
-      max-width: 565px;
+<style lang="scss">
+.blog__atricle {
+  @media (min-width: 1169px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
+.blog__image {
+  width: 100%;
+  margin: 0 0 10px 0;
+  @media (min-width: 1169px) {
+    margin: 0 20px 0 0;
+  }
+}
+
+.blog__text {
+  margin-bottom: 10px;
+  @media (min-width: 1169px) {
+    margin-bottom: 20px;
+  }
+}
+
+.blog__content {
+  @media (min-width: 767px) {
+    max-width: 565px;
+  }
+}
 </style>

@@ -9,6 +9,8 @@ body {
 }
 
 .container {
+  max-width: 1230px;
+  margin: 0 auto;
   padding: 0 10px;
 }
 
@@ -23,13 +25,26 @@ body {
   border: none;
   border-radius: 100px;
   text-transform: uppercase;
+  transition: background-color .3s;
+
+  &:hover {
+    background-color: $grey4;
+  }
+
+  @media (min-width: 1169px) {
+    padding: 5px 0;
+    font-weight: 600;
+  }
 }
 
 .section-padding {
   padding: 50px 0;
   @media (min-width: 767px) {
     padding: 80px 0;
-}
+  }
+  @media (min-width: 1169px) {
+    padding: 120px 0;
+  }
 }
 
 .section-bg {
@@ -43,16 +58,16 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    content: '';
+    content: "";
     width: 45px;
     height: 4px;
     background-color: $green;
     border-radius: 2px;
   }
-    @media (min-width: 767px) {
-      &::before {
-        width: 60px;
-      }
+  @media (min-width: 767px) {
+    &::before {
+      width: 60px;
+    }
   }
 }
 
@@ -62,7 +77,10 @@ body {
   text-transform: uppercase;
   @media (min-width: 767px) {
     font-size: 38px;
-}
+  }
+  @media (min-width: 1169px) {
+    font-size: 44px;
+  }
 }
 
 .subtitle {
@@ -72,5 +90,9 @@ body {
   text-transform: uppercase;
   @media (min-width: 767px) {
     font-size: 28px;
-}
+  }
+  @media (min-width: 1169px) {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
 }

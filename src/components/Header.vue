@@ -25,7 +25,7 @@ export default {
   position: relative;
   z-index: 100;
   @media (min-width: 991px) {
-    padding: 40px 0 55px;
+    margin: 40px 0 55px;
   }
 }
 
