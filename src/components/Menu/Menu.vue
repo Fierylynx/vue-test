@@ -9,7 +9,7 @@
     <span></span>
     <span></span>
   </button>
-  <nav v-show="navOpen" v-if="navOpen ">
+  <nav v-show="navOpen">
     <MenuList />
     <MenuForm />
   </nav>
@@ -45,7 +45,7 @@ nav {
   background-color: $black;
   @media (min-width: 991px) {
     position: relative;
-    display: block;
+    display: block !important;
     padding: 0;
   }
 }
@@ -58,9 +58,6 @@ nav {
   background-color: transparent;
   border: none;
   z-index: 100;
-    @media (min-width: 991px) {
-    display: none;
-  }
 
   span {
     position: absolute;
