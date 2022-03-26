@@ -1,6 +1,7 @@
 <template>
   <button
     class="burger"
+    type="button"
     @click="navOpen = !navOpen"
     v-bind:class="{ active: navOpen }"
   >
@@ -8,7 +9,7 @@
     <span></span>
     <span></span>
   </button>
-  <nav v-show="navOpen">
+  <nav v-show="navOpen" v-if="navOpen ">
     <MenuList />
     <MenuForm />
   </nav>
@@ -44,7 +45,7 @@ nav {
   background-color: $black;
   @media (min-width: 991px) {
     position: relative;
-    display: block !important;
+    display: block;
     padding: 0;
   }
 }
@@ -57,6 +58,9 @@ nav {
   background-color: transparent;
   border: none;
   z-index: 100;
+    @media (min-width: 991px) {
+    display: none;
+  }
 
   span {
     position: absolute;

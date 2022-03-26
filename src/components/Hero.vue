@@ -14,7 +14,7 @@
             arcu at, interdum porttitor erat.
           </p>
         </div>
-        <button class="hero__button button">Button</button>
+        <button class="hero__button button" type="button">Button</button>
       </div>
     </div>
   </section>
