@@ -32,6 +32,7 @@ export default {};
   flex-direction: column;
   justify-content: center;
   height: 100vh;
+  min-height: 600px;
 
   @media (min-width: 767px) {
     max-width: 788px;

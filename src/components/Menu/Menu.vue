@@ -43,6 +43,7 @@ nav {
   height: 100vh;
   padding: 20px;
   background-color: $black;
+  overflow: scroll;
   @media (min-width: 991px) {
     position: relative;
     display: block !important;
