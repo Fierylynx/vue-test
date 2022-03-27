@@ -31,15 +31,11 @@ export default {};
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: calc(100vh - 77px);
+  height: 100vh;
 
   @media (min-width: 767px) {
     max-width: 788px;
     margin: 0 auto;
-  }
-
-  @media (min-width: 991px) {
-    height: 100vh;
   }
 }
 
