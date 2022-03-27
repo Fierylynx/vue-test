@@ -1,8 +1,8 @@
 <template>
-  <footer class="footer section-padding section-bg">
+  <footer class="footer section-padding section-bg" id="footer">
     <div class="container">
       <div class="footer__wrapper">
-        <SocialList :socials="socials"/>
+        <SocialList :socials="socials" />
         <div class="footer__content">
           <MenuList class="menu menu--footer" />
           <span class="footer__copy">
@@ -40,10 +40,16 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .footer {
   &.section-padding {
     padding: 70px 0;
+  }
+
+  @media (min-width: 991px) {
+    &.section-padding {
+      padding: 70px 0 70px 150px;
+    }
   }
 }
 
@@ -60,7 +66,7 @@ export default {
   display: block;
   font-size: 16px;
   text-align: center;
-  
+
   @media (min-width: 991px) {
     text-align: left;
   }

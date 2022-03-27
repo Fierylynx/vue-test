@@ -1,19 +1,19 @@
 <template>
   <ul class="menu">
     <li class="menu__item">
-      <a class="menu__link" href="#">Work</a>
+      <a class="menu__link" href="#body">Work</a>
     </li>
     <li class="menu__item">
-      <a class="menu__link" href="#">About</a>
+      <a class="menu__link" href="#body">About</a>
     </li>
     <li class="menu__item">
-      <a class="menu__link" href="#">Services</a>
+      <a class="menu__link" href="#services">Services</a>
     </li>
     <li class="menu__item">
-      <a class="menu__link" href="#">Blog</a>
+      <a class="menu__link" href="#blog">Blog</a>
     </li>
     <li class="menu__item">
-      <a class="menu__link" href="#">Contact</a>
+      <a class="menu__link" href="#footer">Contact</a>
     </li>
   </ul>
 </template>

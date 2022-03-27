@@ -1,5 +1,5 @@
 <template>
-  <section class="services section-padding">
+  <section class="services section-padding" id="services">
     <div class="container">
       <ul class="services__list" :services="services">
         <Item

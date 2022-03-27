@@ -31,9 +31,11 @@ export default {
 }
 
 .header {
-  position: relative;
+  position: fixed;
+  width: 100%;
   padding: 10px;
   background-color: $black;
+  z-index: 120;
 
   @media (min-width: 991px) {
     max-width: 150px;

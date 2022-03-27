@@ -1,34 +1,35 @@
 <template>
-      <form class="menu__form">
-      <input 
-        class="menu__input" type="text" 
-        v-show="inputVisibility" />
-      <button
-        class="menu__search"
-        @click.prevent="inputVisibility = !inputVisibility"
-        type="button"
-      ></button>
-    </form>
+  <form class="menu__form">
+    <input class="menu__input" type="text" v-show="inputVisibility" />
+    <button
+      class="menu__search menu__search--active"
+      @click.prevent="inputVisibility = !inputVisibility"
+      type="button"
+      :class="{ active: inputVisibility }"
+    ></button>
+  </form>
 </template>
 
 <script>
 export default {
-    data() {
+  data() {
     return {
       inputVisibility: false,
     };
   },
-
-}
+};
 </script>
 
-<style lang='scss'>
+<style lang="scss" scoped>
 @import "../../assets/scss/vars";
 
 .menu__form {
   display: flex;
   align-items: center;
   justify-content: center;
+    @media (min-width: 991px) {
+    padding: 0 5px;
+  }
 }
 
 .menu__input {
@@ -41,17 +42,25 @@ export default {
   @media (min-width: 767px) {
     max-width: 700px;
   }
+    @media (min-width: 991px) {
+    max-width: 70px;
+  }
 }
 
 .menu__search {
   position: relative;
   z-index: 100;
   width: 44px;
-  height: 44px;
+  height: 45px;
   padding: 2px;
   background-color: $grey3;
   border: none;
-  border-radius: 0 4px 4px 0;
+  border-radius: 4px;
+
+  &.active {
+    background-color: $grey3;
+    border-radius: 0 4px 4px 0;
+  }
 
   &::after {
     position: absolute;
@@ -74,5 +83,4 @@ export default {
     }
   }
 }
-
 </style>

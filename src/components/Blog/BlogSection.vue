@@ -1,5 +1,5 @@
 <template>
-  <section class="blog section-padding">
+  <section class="blog section-padding" id="blog">
     <div class="container">
       <div class="blog__wrapper">
         <h2 class="blog__title title top-element">From the blog</h2>
@@ -65,7 +65,7 @@ export default {
 <style lang="scss">
 .blog__title {
   margin-bottom: 30px;
-  
+
   @media (min-width: 1169px) {
     margin-bottom: 70px;
   }
