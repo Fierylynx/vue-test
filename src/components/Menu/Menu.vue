@@ -48,6 +48,7 @@ nav {
     position: relative;
     display: block !important;
     padding: 0;
+    overflow: hidden;
   }
 }
 
